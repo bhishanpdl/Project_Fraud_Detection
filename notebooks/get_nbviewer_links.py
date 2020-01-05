@@ -10,6 +10,14 @@ nbview = "https://nbviewer.jupyter.org/github/"
 notebooks = sorted([ nb for nb in glob.glob('*.ipynb')])
 
 with open('nb_links.md','w') as fo:
+    # first write the header
+    line = "|  Notebook | Rendered   | Description  |  Author |"
+    fo.write(line + '\n')
+
+    line = "|---|---|---|---|"
+    fo.write(line + '\n')
+
+    # then loop over all the notebooks
     for notebook in notebooks:
         gh_link = github + user + project + path + notebook
         nb_link = nbview + user + project + path + notebook

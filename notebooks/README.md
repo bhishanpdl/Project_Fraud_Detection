@@ -1,3 +1,5 @@
+|  Notebook | Rendered   | Description  |  Author |
+|---|---|---|---|
 | a01_classification_eda.ipynb  | [ipynb](https://github.com/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/a01_classification_eda.ipynb), [rendered](https://nbviewer.jupyter.org/github/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/a01_classification_eda.ipynb)  |   | [Bhishan Poudel](https://bhishanpdl.github.io/)  |
 | a02_classification_statistics.ipynb  | [ipynb](https://github.com/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/a02_classification_statistics.ipynb), [rendered](https://nbviewer.jupyter.org/github/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/a02_classification_statistics.ipynb)  |   | [Bhishan Poudel](https://bhishanpdl.github.io/)  |
 | b01_classification_modelling_undersample.ipynb  | [ipynb](https://github.com/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/b01_classification_modelling_undersample.ipynb), [rendered](https://nbviewer.jupyter.org/github/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/b01_classification_modelling_undersample.ipynb)  |   | [Bhishan Poudel](https://bhishanpdl.github.io/)  |
