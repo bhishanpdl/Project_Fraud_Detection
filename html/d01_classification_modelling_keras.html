@@ -11795,7 +11795,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Data-Description" data-toc-modified-id="Data-Description-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Data Description</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Imports</a></span></li><li><span><a href="#Useful-Scripts" data-toc-modified-id="Useful-Scripts-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Useful Scripts</a></span></li><li><span><a href="#Load-the-data" data-toc-modified-id="Load-the-data-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Load the data</a></span></li><li><span><a href="#Preprocessing" data-toc-modified-id="Preprocessing-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Preprocessing</a></span><ul class="toc-item"><li><span><a href="#Scaling" data-toc-modified-id="Scaling-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Scaling</a></span></li><li><span><a href="#Random-Under-Sampling" data-toc-modified-id="Random-Under-Sampling-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Random Under Sampling</a></span></li><li><span><a href="#Train-test-split-with-stratify" data-toc-modified-id="Train-test-split-with-stratify-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Train test split with stratify</a></span></li><li><span><a href="#Check-for-nans-before-modelling" data-toc-modified-id="Check-for-nans-before-modelling-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Check for nans before modelling</a></span></li></ul></li><li><span><a href="#Modelling" data-toc-modified-id="Modelling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modelling</a></span><ul class="toc-item"><li><span><a href="#Deep-Learning-Imbalanced-Data" data-toc-modified-id="Deep-Learning-Imbalanced-Data-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Deep Learning Imbalanced Data</a></span></li><li><span><a href="#Deep-Learning-Undersampled-Data" data-toc-modified-id="Deep-Learning-Undersampled-Data-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Deep Learning Undersampled Data</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Data-Description" data-toc-modified-id="Data-Description-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Data Description</a></span></li><li><span><a href="#Imports" data-toc-modified-id="Imports-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Imports</a></span></li><li><span><a href="#Useful-Scripts" data-toc-modified-id="Useful-Scripts-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Useful Scripts</a></span></li><li><span><a href="#Load-the-data" data-toc-modified-id="Load-the-data-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Load the data</a></span></li><li><span><a href="#Preprocessing" data-toc-modified-id="Preprocessing-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Preprocessing</a></span><ul class="toc-item"><li><span><a href="#Target-Distribution" data-toc-modified-id="Target-Distribution-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Target Distribution</a></span></li><li><span><a href="#Scaling" data-toc-modified-id="Scaling-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Scaling</a></span></li><li><span><a href="#Random-Under-Sampling" data-toc-modified-id="Random-Under-Sampling-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Random Under Sampling</a></span></li><li><span><a href="#Train-test-split-with-stratify" data-toc-modified-id="Train-test-split-with-stratify-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>Train test split with stratify</a></span></li><li><span><a href="#Check-for-nans-before-modelling" data-toc-modified-id="Check-for-nans-before-modelling-5.5"><span class="toc-item-num">5.5&nbsp;&nbsp;</span>Check for nans before modelling</a></span></li></ul></li><li><span><a href="#Modelling" data-toc-modified-id="Modelling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modelling</a></span><ul class="toc-item"><li><span><a href="#Deep-Learning-Imbalanced-Data" data-toc-modified-id="Deep-Learning-Imbalanced-Data-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Deep Learning Imbalanced Data</a></span></li><li><span><a href="#Deep-Learning-Undersampled-Data" data-toc-modified-id="Deep-Learning-Undersampled-Data-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Deep Learning Undersampled Data</a></span></li></ul></li><li><span><a href="#Keras-Deep-Learning-using-scikit-learn-API" data-toc-modified-id="Keras-Deep-Learning-using-scikit-learn-API-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Keras Deep Learning using scikit-learn API</a></span></li><li><span><a href="#Time-Taken" data-toc-modified-id="Time-Taken-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Time Taken</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -11860,38 +11860,11 @@ performances of the models. Higher the recall, better is the model.</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bhishan</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
-
-<span class="o">%</span><span class="k">autoreload</span> 2
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -11899,6 +11872,7 @@ performances of the models. Higher the recall, better is the model.</p>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
+<span class="n">time_start_notebook</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="c1"># random state</span>
 <span class="n">random_state</span><span class="o">=</span><span class="mi">100</span>
@@ -11927,7 +11901,7 @@ performances of the models. Higher the recall, better is the model.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[(&#39;numpy&#39;, &#39;1.15.4&#39;), (&#39;pandas&#39;, &#39;0.23.4&#39;), (&#39;seaborn&#39;, &#39;0.9.0&#39;), (&#39;matplotlib&#39;, &#39;2.2.3&#39;)]
+<pre>[(&#39;numpy&#39;, &#39;1.17.3&#39;), (&#39;pandas&#39;, &#39;0.25.1&#39;), (&#39;seaborn&#39;, &#39;0.9.0&#39;), (&#39;matplotlib&#39;, &#39;3.1.1&#39;)]
 </pre>
 </div>
 </div>
@@ -11938,7 +11912,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
@@ -11952,7 +11926,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># scale and split</span>
@@ -11968,7 +11942,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># classifiers</span>
@@ -11984,7 +11958,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># roc auc etc scores</span>
@@ -12004,7 +11978,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># roc auc curves</span>
@@ -12019,7 +11993,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># confusion matrix</span>
@@ -12034,7 +12008,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
@@ -12053,7 +12027,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
@@ -12098,7 +12072,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_method_attributes</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
@@ -12130,7 +12104,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/raw/creditcard.csv.zip&#39;</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;zip&#39;</span><span class="p">)</span>
@@ -12159,7 +12133,7 @@ performances of the models. Higher the recall, better is the model.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12217,7 +12191,7 @@ performances of the models. Higher the recall, better is the model.</p>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>0.0</td>
       <td>-1.359807</td>
       <td>-0.072781</td>
@@ -12251,7 +12225,7 @@ performances of the models. Higher the recall, better is the model.</p>
       <td>0</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>0.0</td>
       <td>1.191857</td>
       <td>0.266151</td>
@@ -12285,7 +12259,7 @@ performances of the models. Higher the recall, better is the model.</p>
       <td>0</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>2</td>
       <td>1.0</td>
       <td>-1.358354</td>
       <td>-1.340163</td>
@@ -12319,7 +12293,7 @@ performances of the models. Higher the recall, better is the model.</p>
       <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
+      <td>3</td>
       <td>1.0</td>
       <td>-0.966272</td>
       <td>-0.185226</td>
@@ -12353,7 +12327,7 @@ performances of the models. Higher the recall, better is the model.</p>
       <td>0</td>
     </tr>
     <tr>
-      <th>4</th>
+      <td>4</td>
       <td>2.0</td>
       <td>-1.158233</td>
       <td>0.877737</td>
@@ -12409,13 +12383,86 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Target-Distribution">Target Distribution<a class="anchor-link" href="#Target-Distribution">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;Class&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>0    284315
+1       492
+Name: Class, dtype: int64</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x108066890&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Scaling">Scaling<a class="anchor-link" href="#Scaling">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># RobustScaler is less prone to outliers.</span>
@@ -12451,7 +12498,7 @@ performances of the models. Higher the recall, better is the model.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># without removing outliers</span>
@@ -12475,7 +12522,7 @@ performances of the models. Higher the recall, better is the model.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12502,7 +12549,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
@@ -12515,7 +12562,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
@@ -12531,7 +12578,7 @@ Name: Class, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[41]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12552,7 +12599,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Without undersampling, (imbalanced data)</span>
@@ -12578,7 +12625,7 @@ Name: Class, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12595,7 +12642,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">columns</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">difference</span><span class="p">([</span><span class="s1">&#39;Amount&#39;</span><span class="p">,</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">target</span><span class="p">])</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="n">target</span><span class="p">]</span>
@@ -12627,7 +12674,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
@@ -12657,7 +12704,7 @@ Name: Class, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -12715,7 +12762,7 @@ Name: Class, dtype: int64</pre>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>-1.137612</td>
       <td>2.345154</td>
       <td>-1.767247</td>
@@ -12749,7 +12796,7 @@ Name: Class, dtype: int64</pre>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>-1.028649</td>
       <td>1.141569</td>
       <td>2.492561</td>
@@ -12795,7 +12842,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">],</span><span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
@@ -12824,7 +12871,7 @@ Name: Class, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -12882,7 +12929,7 @@ Name: Class, dtype: int64</pre>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>0.046622</td>
       <td>1.529678</td>
       <td>-0.453615</td>
@@ -12916,7 +12963,7 @@ Name: Class, dtype: int64</pre>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>0.145870</td>
       <td>0.107484</td>
       <td>0.755127</td>
@@ -12962,7 +13009,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pd.concat([x[target].value_counts(normalize=True) for x in [df,df_train,df_test]])</span>
@@ -12976,7 +13023,7 @@ Name: Class, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Xtrain_under</span><span class="p">,</span><span class="n">Xtest_under</span><span class="p">,</span><span class="n">ytrain_under</span><span class="p">,</span><span class="n">ytest_under</span> <span class="o">=</span> \
@@ -13022,7 +13069,7 @@ Undersampled test shape: (197, 30)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13080,7 +13127,7 @@ Undersampled test shape: (197, 30)
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>-0.762507</td>
       <td>0.796995</td>
       <td>1.361020</td>
@@ -13114,7 +13161,7 @@ Undersampled test shape: (197, 30)
       <td>0.0</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>-1.165320</td>
       <td>0.635656</td>
       <td>0.053974</td>
@@ -13168,7 +13215,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13184,7 +13231,7 @@ Undersampled test shape: (197, 30)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[56]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -13201,7 +13248,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_under</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13217,7 +13264,7 @@ Undersampled test shape: (197, 30)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13234,7 +13281,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_under</span><span class="o">.</span><span class="n">columns</span>
@@ -13250,7 +13297,7 @@ Undersampled test shape: (197, 30)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[58]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -13279,7 +13326,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
@@ -13306,7 +13353,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_inputs</span> <span class="o">=</span> <span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -13325,7 +13372,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_method_attributes</span><span class="p">(</span><span class="n">clf_imb</span><span class="p">)</span>
@@ -13341,7 +13388,7 @@ Undersampled test shape: (197, 30)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13375,104 +13422,114 @@ Undersampled test shape: (197, 30)
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>add</td>
       <td>compute_output_shape</td>
       <td>get_input_shape_at</td>
-      <td>input_names</td>
+      <td>input_shape</td>
       <td>optimizer</td>
-      <td>predict_on_batch</td>
+      <td>predict_proba</td>
       <td>supports_masking</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>add_loss</td>
       <td>count_params</td>
       <td>get_layer</td>
-      <td>input_shape</td>
+      <td>input_spec</td>
       <td>output</td>
-      <td>predict_proba</td>
+      <td>reset_metrics</td>
       <td>test_on_batch</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>add_update</td>
-      <td>evaluate</td>
+      <td>2</td>
+      <td>add_metric</td>
+      <td>dtype</td>
       <td>get_losses_for</td>
-      <td>input_spec</td>
+      <td>inputs</td>
       <td>output_mask</td>
       <td>reset_states</td>
       <td>to_json</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>add_weight</td>
-      <td>evaluate_generator</td>
+      <td>3</td>
+      <td>add_update</td>
+      <td>evaluate</td>
       <td>get_output_at</td>
-      <td>inputs</td>
+      <td>layers</td>
       <td>output_names</td>
       <td>run_internal_graph</td>
       <td>to_yaml</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>assert_input_compatibility</td>
-      <td>fit</td>
+      <td>4</td>
+      <td>add_weight</td>
+      <td>evaluate_generator</td>
       <td>get_output_mask_at</td>
-      <td>layers</td>
+      <td>load_weights</td>
       <td>output_shape</td>
       <td>save</td>
       <td>train_on_batch</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>build</td>
-      <td>fit_generator</td>
+      <td>5</td>
+      <td>assert_input_compatibility</td>
+      <td>fit</td>
       <td>get_output_shape_at</td>
-      <td>load_weights</td>
+      <td>losses</td>
       <td>outputs</td>
       <td>save_weights</td>
       <td>trainable</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>built</td>
-      <td>from_config</td>
+      <td>6</td>
+      <td>build</td>
+      <td>fit_generator</td>
       <td>get_updates_for</td>
-      <td>losses</td>
+      <td>metrics</td>
       <td>pop</td>
       <td>set_weights</td>
       <td>trainable_weights</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>call</td>
-      <td>get_config</td>
+      <td>7</td>
+      <td>built</td>
+      <td>from_config</td>
       <td>get_weights</td>
-      <td>model</td>
+      <td>metrics_names</td>
       <td>predict</td>
       <td>state_updates</td>
       <td>updates</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>compile</td>
-      <td>get_input_at</td>
+      <td>8</td>
+      <td>call</td>
+      <td>get_config</td>
       <td>input</td>
-      <td>name</td>
+      <td>model</td>
       <td>predict_classes</td>
       <td>stateful</td>
       <td>uses_learning_phase</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>compute_mask</td>
-      <td>get_input_mask_at</td>
+      <td>9</td>
+      <td>compile</td>
+      <td>get_input_at</td>
       <td>input_mask</td>
-      <td>non_trainable_weights</td>
+      <td>name</td>
       <td>predict_generator</td>
       <td>summary</td>
       <td>weights</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>compute_mask</td>
+      <td>get_input_mask_at</td>
+      <td>input_names</td>
+      <td>non_trainable_weights</td>
+      <td>predict_on_batch</td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -13487,7 +13544,7 @@ Undersampled test shape: (197, 30)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_imb</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
@@ -13507,14 +13564,15 @@ Undersampled test shape: (197, 30)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>_________________________________________________________________
+<pre>Model: &#34;sequential_1&#34;
+_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-dense_4 (Dense)              (None, 30)                930       
+dense_1 (Dense)              (None, 30)                930       
 _________________________________________________________________
-dense_5 (Dense)              (None, 32)                992       
+dense_2 (Dense)              (None, 32)                992       
 _________________________________________________________________
-dense_6 (Dense)              (None, 2)                 66        
+dense_3 (Dense)              (None, 2)                 66        
 =================================================================
 Total params: 1,988
 Trainable params: 1,988
@@ -13530,7 +13588,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_imb</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span>
@@ -13545,15 +13603,15 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_imb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span>
             <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
             <span class="n">batch_size</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
-            <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
             <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13571,59 +13629,29 @@ _________________________________________________________________
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 182276 samples, validate on 45569 samples
-Epoch 1/20
- - 7s - loss: 0.0099 - acc: 0.9989 - val_loss: 0.0031 - val_acc: 0.9995
-Epoch 2/20
- - 7s - loss: 0.0031 - acc: 0.9993 - val_loss: 0.0028 - val_acc: 0.9996
-Epoch 3/20
- - 7s - loss: 0.0028 - acc: 0.9994 - val_loss: 0.0031 - val_acc: 0.9995
-Epoch 4/20
- - 7s - loss: 0.0026 - acc: 0.9994 - val_loss: 0.0027 - val_acc: 0.9995
-Epoch 5/20
- - 7s - loss: 0.0024 - acc: 0.9994 - val_loss: 0.0028 - val_acc: 0.9995
-Epoch 6/20
- - 7s - loss: 0.0023 - acc: 0.9994 - val_loss: 0.0026 - val_acc: 0.9996
-Epoch 7/20
- - 7s - loss: 0.0021 - acc: 0.9995 - val_loss: 0.0028 - val_acc: 0.9996
-Epoch 8/20
- - 7s - loss: 0.0021 - acc: 0.9995 - val_loss: 0.0030 - val_acc: 0.9996
-Epoch 9/20
- - 7s - loss: 0.0021 - acc: 0.9995 - val_loss: 0.0030 - val_acc: 0.9995
-Epoch 10/20
- - 7s - loss: 0.0020 - acc: 0.9995 - val_loss: 0.0025 - val_acc: 0.9997
-Epoch 11/20
- - 7s - loss: 0.0019 - acc: 0.9995 - val_loss: 0.0032 - val_acc: 0.9996
-Epoch 12/20
- - 7s - loss: 0.0019 - acc: 0.9996 - val_loss: 0.0028 - val_acc: 0.9996
-Epoch 13/20
- - 7s - loss: 0.0018 - acc: 0.9995 - val_loss: 0.0029 - val_acc: 0.9996
-Epoch 14/20
- - 7s - loss: 0.0017 - acc: 0.9996 - val_loss: 0.0030 - val_acc: 0.9993
-Epoch 15/20
- - 7s - loss: 0.0017 - acc: 0.9996 - val_loss: 0.0033 - val_acc: 0.9997
-Epoch 16/20
- - 7s - loss: 0.0017 - acc: 0.9996 - val_loss: 0.0032 - val_acc: 0.9996
-Epoch 17/20
- - 7s - loss: 0.0016 - acc: 0.9996 - val_loss: 0.0032 - val_acc: 0.9996
-Epoch 18/20
- - 7s - loss: 0.0015 - acc: 0.9996 - val_loss: 0.0035 - val_acc: 0.9996
-Epoch 19/20
- - 7s - loss: 0.0014 - acc: 0.9996 - val_loss: 0.0038 - val_acc: 0.9995
-Epoch 20/20
- - 7s - loss: 0.0015 - acc: 0.9996 - val_loss: 0.0039 - val_acc: 0.9993
+Epoch 1/10
+Epoch 2/10
+Epoch 3/10
+Epoch 4/10
+Epoch 5/10
+Epoch 6/10
+Epoch 7/10
+Epoch 8/10
+Epoch 9/10
+Epoch 10/10
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x11c112d68&gt;</pre>
+<pre>&lt;keras.callbacks.callbacks.History at 0x1323a1810&gt;</pre>
 </div>
 
 </div>
@@ -13634,7 +13662,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">clf_imb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13647,7 +13675,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds_imb</span> <span class="o">=</span> <span class="n">clf_imb</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13660,7 +13688,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds_imb</span>
@@ -13676,7 +13704,7 @@ Epoch 20/20
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[68]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13693,7 +13721,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">ypreds_imb</span><span class="p">)</span>
@@ -13712,14 +13740,14 @@ Epoch 20/20
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[72]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[43564, 13300],
-       [   94,     4]])</pre>
+<pre>array([[56846,    18],
+       [   21,    77]])</pre>
 </div>
 
 </div>
@@ -13730,7 +13758,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keras Imbalaned Data Results&#39;</span><span class="p">)</span>
@@ -13757,8 +13785,8 @@ Epoch 20/20
 <pre>Keras Imbalaned Data Results
 -------------------------
 Total Frauds:  98
-Incorrect Frauds:  94
-Incorrect Percent:  95.92 %
+Incorrect Frauds:  21
+Incorrect Percent:  21.43 %
 </pre>
 </div>
 </div>
@@ -13769,7 +13797,7 @@ Incorrect Percent:  95.92 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span> <span class="n">ypreds_imb</span><span class="p">)</span>
@@ -13792,12 +13820,12 @@ Incorrect Percent:  95.92 %
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>              precision    recall  f1-score   support
 
-           0       1.00      0.77      0.87     56864
-           1       0.00      0.04      0.00        98
+           0       1.00      1.00      1.00     56864
+           1       0.81      0.79      0.80        98
 
-   micro avg       0.76      0.76      0.76     56962
-   macro avg       0.50      0.40      0.43     56962
-weighted avg       1.00      0.76      0.87     56962
+    accuracy                           1.00     56962
+   macro avg       0.91      0.89      0.90     56962
+weighted avg       1.00      1.00      1.00     56962
 
 </pre>
 </div>
@@ -13817,7 +13845,7 @@ weighted avg       1.00      0.76      0.87     56962
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_inputs</span> <span class="o">=</span> <span class="n">Xtrain_under</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -13836,7 +13864,7 @@ weighted avg       1.00      0.76      0.87     56962
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_under</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span>
@@ -13851,7 +13879,7 @@ weighted avg       1.00      0.76      0.87     56962
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_under</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain_under</span><span class="p">,</span> <span class="n">ytrain_under</span><span class="p">,</span>
@@ -13878,58 +13906,58 @@ weighted avg       1.00      0.76      0.87     56962
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 629 samples, validate on 158 samples
 Epoch 1/20
- - 0s - loss: 0.4386 - acc: 0.7647 - val_loss: 0.3447 - val_acc: 0.8924
+ - 0s - loss: 0.9956 - accuracy: 0.5962 - val_loss: 0.5190 - val_accuracy: 0.7152
 Epoch 2/20
- - 0s - loss: 0.2972 - acc: 0.8983 - val_loss: 0.2694 - val_acc: 0.9177
+ - 0s - loss: 0.4131 - accuracy: 0.7711 - val_loss: 0.4325 - val_accuracy: 0.8228
 Epoch 3/20
- - 0s - loss: 0.2414 - acc: 0.9189 - val_loss: 0.2173 - val_acc: 0.9241
+ - 0s - loss: 0.3425 - accuracy: 0.8633 - val_loss: 0.3722 - val_accuracy: 0.8734
 Epoch 4/20
- - 0s - loss: 0.2132 - acc: 0.9221 - val_loss: 0.1851 - val_acc: 0.9367
+ - 0s - loss: 0.2950 - accuracy: 0.8951 - val_loss: 0.3248 - val_accuracy: 0.8924
 Epoch 5/20
- - 0s - loss: 0.1901 - acc: 0.9348 - val_loss: 0.1612 - val_acc: 0.9367
+ - 0s - loss: 0.2539 - accuracy: 0.9110 - val_loss: 0.2864 - val_accuracy: 0.9051
 Epoch 6/20
- - 0s - loss: 0.1761 - acc: 0.9348 - val_loss: 0.1447 - val_acc: 0.9557
+ - 0s - loss: 0.2222 - accuracy: 0.9205 - val_loss: 0.2589 - val_accuracy: 0.9114
 Epoch 7/20
- - 0s - loss: 0.1651 - acc: 0.9348 - val_loss: 0.1360 - val_acc: 0.9557
+ - 0s - loss: 0.2002 - accuracy: 0.9285 - val_loss: 0.2334 - val_accuracy: 0.9177
 Epoch 8/20
- - 0s - loss: 0.1553 - acc: 0.9380 - val_loss: 0.1283 - val_acc: 0.9494
+ - 0s - loss: 0.1829 - accuracy: 0.9285 - val_loss: 0.2154 - val_accuracy: 0.9177
 Epoch 9/20
- - 0s - loss: 0.1477 - acc: 0.9380 - val_loss: 0.1187 - val_acc: 0.9684
+ - 0s - loss: 0.1684 - accuracy: 0.9332 - val_loss: 0.2019 - val_accuracy: 0.9177
 Epoch 10/20
- - 0s - loss: 0.1412 - acc: 0.9396 - val_loss: 0.1164 - val_acc: 0.9620
+ - 0s - loss: 0.1577 - accuracy: 0.9332 - val_loss: 0.1902 - val_accuracy: 0.9241
 Epoch 11/20
- - 0s - loss: 0.1373 - acc: 0.9396 - val_loss: 0.1112 - val_acc: 0.9620
+ - 0s - loss: 0.1478 - accuracy: 0.9348 - val_loss: 0.1782 - val_accuracy: 0.9304
 Epoch 12/20
- - 0s - loss: 0.1309 - acc: 0.9428 - val_loss: 0.1125 - val_acc: 0.9557
+ - 0s - loss: 0.1396 - accuracy: 0.9412 - val_loss: 0.1733 - val_accuracy: 0.9367
 Epoch 13/20
- - 0s - loss: 0.1253 - acc: 0.9539 - val_loss: 0.1079 - val_acc: 0.9620
+ - 0s - loss: 0.1321 - accuracy: 0.9412 - val_loss: 0.1684 - val_accuracy: 0.9304
 Epoch 14/20
- - 0s - loss: 0.1212 - acc: 0.9539 - val_loss: 0.1358 - val_acc: 0.9494
+ - 0s - loss: 0.1247 - accuracy: 0.9475 - val_loss: 0.1579 - val_accuracy: 0.9304
 Epoch 15/20
- - 0s - loss: 0.1214 - acc: 0.9539 - val_loss: 0.1253 - val_acc: 0.9494
+ - 0s - loss: 0.1191 - accuracy: 0.9459 - val_loss: 0.1534 - val_accuracy: 0.9367
 Epoch 16/20
- - 0s - loss: 0.1133 - acc: 0.9539 - val_loss: 0.1163 - val_acc: 0.9557
+ - 0s - loss: 0.1138 - accuracy: 0.9507 - val_loss: 0.1534 - val_accuracy: 0.9367
 Epoch 17/20
- - 0s - loss: 0.1103 - acc: 0.9587 - val_loss: 0.1223 - val_acc: 0.9494
+ - 0s - loss: 0.1080 - accuracy: 0.9555 - val_loss: 0.1441 - val_accuracy: 0.9367
 Epoch 18/20
- - 0s - loss: 0.1063 - acc: 0.9587 - val_loss: 0.1150 - val_acc: 0.9557
+ - 0s - loss: 0.1036 - accuracy: 0.9555 - val_loss: 0.1443 - val_accuracy: 0.9430
 Epoch 19/20
- - 0s - loss: 0.1019 - acc: 0.9618 - val_loss: 0.1130 - val_acc: 0.9494
+ - 0s - loss: 0.0995 - accuracy: 0.9587 - val_loss: 0.1420 - val_accuracy: 0.9430
 Epoch 20/20
- - 0s - loss: 0.0986 - acc: 0.9587 - val_loss: 0.1149 - val_acc: 0.9494
+ - 0s - loss: 0.0968 - accuracy: 0.9618 - val_loss: 0.1417 - val_accuracy: 0.9367
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x12f622e10&gt;</pre>
+<pre>&lt;keras.callbacks.callbacks.History at 0x133dd4210&gt;</pre>
 </div>
 
 </div>
@@ -13940,7 +13968,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds_under</span> <span class="o">=</span> <span class="n">clf_under</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest_under</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13953,7 +13981,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds_under</span> <span class="o">=</span> <span class="n">clf_under</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">Xtest_under</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13966,7 +13994,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ypreds_under</span>
@@ -13982,7 +14010,7 @@ Epoch 20/20
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[80]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -13991,12 +14019,12 @@ Epoch 20/20
 <pre>array([1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1,
        1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1,
        1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
-       0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1,
+       0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1,
        0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0,
-       0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1,
        0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0,
-       0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0,
-       0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1])</pre>
+       0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0,
+       0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1])</pre>
 </div>
 
 </div>
@@ -14007,7 +14035,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">ytest_under</span><span class="p">,</span><span class="n">ypreds_under</span><span class="p">)</span>
@@ -14026,13 +14054,13 @@ Epoch 20/20
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[97,  2],
+<pre>array([[95,  4],
        [ 7, 91]])</pre>
 </div>
 
@@ -14044,7 +14072,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keras Undersampled Train Test Results&#39;</span><span class="p">)</span>
@@ -14083,7 +14111,7 @@ Incorrect Percent:  7.14 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">report_under</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">ytest_under</span><span class="p">,</span> <span class="n">ypreds_under</span><span class="p">)</span>
@@ -14106,13 +14134,225 @@ Incorrect Percent:  7.14 %
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>              precision    recall  f1-score   support
 
-           0       0.93      0.98      0.96        99
-           1       0.98      0.93      0.95        98
+           0       0.93      0.96      0.95        99
+           1       0.96      0.93      0.94        98
 
-   micro avg       0.95      0.95      0.95       197
-   macro avg       0.96      0.95      0.95       197
-weighted avg       0.96      0.95      0.95       197
+    accuracy                           0.94       197
+   macro avg       0.94      0.94      0.94       197
+weighted avg       0.94      0.94      0.94       197
 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Keras-Deep-Learning-using-scikit-learn-API">Keras Deep Learning using scikit-learn API<a class="anchor-link" href="#Keras-Deep-Learning-using-scikit-learn-API">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Dense</span>
+
+<span class="kn">from</span> <span class="nn">keras.wrappers.scikit_learn</span> <span class="k">import</span> <span class="n">KerasClassifier</span>
+
+<span class="kn">from</span> <span class="nn">keras.utils</span> <span class="k">import</span> <span class="n">np_utils</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">KFold</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <span class="n">Pipeline</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Xtrain_under</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ytrain_under</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((787, 30), (787,))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">Xtrain_under</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">ytrain_under</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">number_of_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">number_of_features</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">baseline_model</span><span class="p">(</span><span class="n">number_of_features</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">):</span>
+    <span class="c1"># create model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+    
+    <span class="c1"># last layer with 1 output</span>
+    <span class="c1"># if one hot enncoded use softmax activation</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+    <span class="c1"># compile model</span>
+    <span class="c1"># if target is one-hot encode and multi-label use categorical_crossentropy</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adadelta&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">estimator</span> <span class="o">=</span> <span class="n">KerasClassifier</span><span class="p">(</span><span class="n">build_fn</span><span class="o">=</span><span class="n">baseline_model</span><span class="p">,</span>
+                            <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                            <span class="n">number_of_features</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">,</span>
+                            <span class="n">batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">kfold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Baseline: </span><span class="si">%.2f%%</span><span class="s2"> (</span><span class="si">%.2f%%</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Baseline: 93.27% (3.85%)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Time-Taken">Time Taken<a class="anchor-link" href="#Time-Taken">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">time_taken</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_start_notebook</span>
+<span class="n">h</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">time_taken</span><span class="p">,</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time taken to run whole notebook: </span><span class="si">{:.0f}</span><span class="s1"> hr &#39;</span>\
+      <span class="s1">&#39;</span><span class="si">{:.0f}</span><span class="s1"> min </span><span class="si">{:.0f}</span><span class="s1"> secs&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="o">*</span><span class="nb">divmod</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mi">60</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Time taken to run whole notebook: 0 hr 2 min 5 secs
 </pre>
 </div>
 </div>

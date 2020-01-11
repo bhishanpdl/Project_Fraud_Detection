@@ -26,6 +26,12 @@ with open('nb_links.md','w') as fo:
         fo.write(line + '\n')
 
 
+# readme
+import os
+
+if not os.path.isfile('README.md'):
+    os.rename('nb_links.md', 'README.md')
+
 """
 notebook: a01_classification_eda.ipynb
 github link: https://github.com/bhishanpdl/Project_Fraud_Detection/blob/master/notebooks/a01_classification_eda.ipynb
