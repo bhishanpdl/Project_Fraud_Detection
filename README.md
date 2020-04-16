@@ -138,6 +138,7 @@ recall = tp / (tp+fn)
 
 
                          Precision = TP (TP/FP)   Precision has all three P's
+                         ^
                          |
               Predicted  |
 Correct 0     0(TN)   1(FP)
