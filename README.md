@@ -128,9 +128,22 @@ TP = 95, FP = 5; TN = 0, FN = 0 ==> F1 = 97.44
 TP = 0, FP = 0; TN = 5, FN = 95 ==> F1 = 0
 ```
 
+
 MCC does not depend on which class is defined as positive and which class is negative.
 
 About the confusion matrix:
+```
+tn,fp,fn,fp = confusion_matrix(ytest,ypreds).ravel()
+recall = tp / (tp+fn)
+
+
+                         Precision = TP (TP/FP)   Precision has all three P's
+                         |
+              Predicted  |
+Correct 0     0(TN)   1(FP)
+        1     0(FN)   1(TP) ---> recall = TP / (TP + FN)   Recall has one Negative
+                                 Out of all 10 last true aniversaries, how many did I recall correctly?
+```
 ![](images/confusion_matrix.png)
 Here I am interested in the quantity False Negative, I want to make it as small as possible. (Ideally zero.) And True positive as high as possible.
 
