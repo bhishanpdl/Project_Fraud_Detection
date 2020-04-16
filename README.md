@@ -132,7 +132,7 @@ TP = 0, FP = 0; TN = 5, FN = 95 ==> F1 = 0
 MCC does not depend on which class is defined as positive and which class is negative.
 
 About the confusion matrix:
-```
+```python
 tn,fp,fn,fp = confusion_matrix(ytest,ypreds).ravel()
 recall = tp / (tp+fn)
 
@@ -143,6 +143,13 @@ recall = tp / (tp+fn)
 Correct 0     0(TN)   1(FP)
         1     0(FN)   1(TP) ---> recall = TP / (TP + FN)   Recall has one Negative
                                  Out of all 10 last true aniversaries, how many did I recall correctly?
+                                 
+0 is non-fraud, non-spam
+1 is fraud    , spam
+
+# We take 1 as fraud or spam cases.
+FP ==> non-spam detected as spam      (but we want to send all non-spam emails)
+FN ==> fraud    detected as non-fraud (but we want to find all frauds)
 ```
 ![](images/confusion_matrix.png)
 Here I am interested in the quantity False Negative, I want to make it as small as possible. (Ideally zero.) And True positive as high as possible.
