@@ -43,12 +43,13 @@ After train-test split, we have total frauds = 98
 0 is non-fraud, 1 is fraud.
 Predicting fraud as non-fraud is serious issue. (predicting 1 as 0 is bad FN is bad)
 --------------------------------------------------------------------------------------
-Model                   FN (Frauds predicted not frauds)
-Local Outlier Factor    95 (95 wrong out of 98) 
-Isolation Forest        73 (73 wrong out of 98)
-LightGBM grid search    30 (30 wrong out of 98)
-Catboost grid search    22 (22 wrong out of 98)
-LightGBM grid search    19 (19 wrong out of 98) **lightgmb is best for imbalanced data
+Model                        FN (Frauds predicted not frauds)
+Local Outlier Factor         95 (95 wrong out of 98) 
+Isolation Forest             73 (73 wrong out of 98)
+XGBoost                      28 (30 wrong out of 98)
+Linear Discriminant Analysis 27 (27 wrong out of 98)
+LightGBM grid search         27 (19 wrong out of 98) 
+Catboost grid search         21 (21 wrong out of 98)
 ```
 
 
