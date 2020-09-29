@@ -4,7 +4,8 @@ data to determine whether the transaction is fraud or not.
 
 
 **Assumptions**:
-- Here we have data for just two days, but we assume the data is representative of the whole population of credit card transactions.
+- Here we have data for just two days, but we assume the data is representative
+ of the whole population of credit card transactions.
 - We assume the 28 variables V1-V28 are
 obtained from correct method of PCA and are scaled properly.
 
@@ -45,8 +46,10 @@ obtained from correct method of PCA and are scaled properly.
 | catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
 | catboost | gridsearch optuna | 0.999368 | 0.930556 | 0.683673 | 0.788235 | 0.841793 |
 
-# Deep Learning: Simple keras model
+# Automatic Modelling: pycaret
 
 
 # Big Data Modelling: PySpark
 ![](reports/screenshots/pyspark_clf_results.png)
+
+# Deep Learning: Simple keras model
