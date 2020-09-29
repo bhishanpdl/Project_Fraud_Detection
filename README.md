@@ -31,11 +31,19 @@ obtained from correct method of PCA and are scaled properly.
 | Isolation Forest | default | 0.997384 | 0.261682 | 0.285714 | 0.997442 |
 | Local Outlier Factor | default | 0.996331 | 0.025641 | 0.030612 | 0.996493 |
 
-# Gradient Boosting Modelling: LightGBM
+# Gradient Boosting Modelling
 | Model | Description | Accuracy | Precision | Recall | F1 | AUC |
 | :---|:---|:---|:---|:---|:---|:---|
 | lightgbm | grid search optuna | 0.999315 | 0.873418 | 0.704082 | 0.779661 | 0.851953 |
 | lightgbm | default | 0.997367 | 0.275862 | 0.326531 | 0.299065 | 0.662527 |
+| Xgboost | default, imbalanced | 0.999263 | 0.850000 | 0.693878 | 0.764045 | 0.846833 |
+| Xgboost | default, undersampling | 0.999263 | 0.850000 | 0.693878 | 0.764045 | 0.846833 |
+| Xgboost | n_estimators=150, imbalanced | 0.999263 | 0.850000 | 0.693878 | 0.764045 | 0.846833 |
+| Xgboost | undersample, hpo1 | 0.999298 | 0.881579 | 0.683673 | 0.770115 | 0.841758 |
+| Xgboost | imbalanced, hpo | 0.999245 | 0.898551 | 0.632653 | 0.742515 | 0.816265 |
+| xgboost | grid search optuna | 0.999333 | 0.875000 | 0.714286 | 0.786517 | 0.857055 |
+| catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
+| catboost | gridsearch optuna | 0.999368 | 0.930556 | 0.683673 | 0.788235 | 0.841793 |
 
 # Deep Learning: Simple keras model
 
