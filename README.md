@@ -17,22 +17,40 @@ obtained from correct method of PCA and are scaled properly.
 - Under-sampling. (We have low number of frauds, choose randomly same number of non-frauds.)
 - Oversampling `SMOTE` method. Used external library `imblearn`.
 
-# Undersampling
+<h1 style="background-color:tomato;">Best Model So Far</h1>
+
+| Model | Description | Accuracy | Precision | Recall | F1 | AUC |
+| :---|:---|:---|:---|:---|:---|:---|
+| catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
+
+</br>
+
+<h1 style="background-color:tomato;">Undersampling</h1>
+
 **Recall for all Classifiers with Grid Search for Undersampled Data**
 ![](reports/screenshots/recall_all_models_undersample_grid.png)
 ![](reports/screenshots/cm_lr_undersample_grid.png)
 
-# SMOTE Oversampling: Logistic Regression
+</br>
+
+<h1 style="background-color:tomato;">SMOTE Oversampling: Logistic Regression</h1>
+
 ![](reports/screenshots/lr_model_evaluation_scalar_metrics.png)
 ![](reports/screenshots/cm_lr_smote_grid.png)
 
-# Anomaly Detection Methods
+</br>
+
+<h1 style="background-color:tomato;">Anomaly Detection Methods</h1>
+
 | Model | Description | Accuracy | Precision | Recall | F1(Weighted) |
 | :---|:---|:---|:---|:---|:---|
 | Isolation Forest | default | 0.997384 | 0.261682 | 0.285714 | 0.997442 |
 | Local Outlier Factor | default | 0.996331 | 0.025641 | 0.030612 | 0.996493 |
 
-# Gradient Boosting Modelling
+</br>
+
+<h1 style="background-color:tomato;">Gradient Boosting Modelling</h1>
+
 | Model | Description | Accuracy | Precision | Recall | F1 | AUC |
 | :---|:---|:---|:---|:---|:---|:---|
 | lightgbm | grid search optuna | 0.999315 | 0.873418 | 0.704082 | 0.779661 | 0.851953 |
@@ -46,10 +64,33 @@ obtained from correct method of PCA and are scaled properly.
 | catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
 | catboost | gridsearch optuna | 0.999368 | 0.930556 | 0.683673 | 0.788235 | 0.841793 |
 
-# Automatic Modelling: pycaret
+</br>
 
+<h1 style="background-color:tomato;">Automatic Modelling: pycaret</h1>
 
-# Big Data Modelling: PySpark
+| Model | Description | Accuracy | AUC | Recall | Precision | F1 | Kappa |
+| :---|:---|:---|:---|:---|:---|:---|:---|
+| cb_tuned | fold=5 | 0.9996 | 0.9659 | 0.7865 | 0.9667 | 0.8642 | 0.8639 |
+| lda_tuned | fold=5 | 0.9995 | 0.9833 | 0.7760 | 0.9217 | 0.8423 | 0.8420 |
+| xgb | default | 0.9994 | 0.9585 | 0.7345 | 0.9102 | 0.8047 | 0.8044 |
+| cb | default | 0.9995 | 0.9554 | 0.7345 | 0.9548 | 0.8215 | 0.8212 |
+| lda | default | 0.9992 | 0.9677 | 0.7255 | 0.8340 | 0.7661 | 0.7657 |
+| xgb_tuned | tuned | 0.9992 | 0.9677 | 0.7255 | 0.8340 | 0.7661 | 0.7657 |
+| lda_tuned | n_iter=100,fold=10 | 0.9992 | 0.9677 | 0.7255 | 0.8340 | 0.7661 | 0.7657 |
+
+</br>
+
+<h1 style="background-color:tomato;">Big Data Modelling: PySpark</h1>
+
 ![](reports/screenshots/pyspark_clf_results.png)
 
-# Deep Learning: Simple keras model
+</br>
+
+<h1 style="background-color:tomato;">Deep Learning Models</h1>
+
+| Model | Description | Accuracy | Precision | Recall | F1 | AUC |
+| :---|:---|:---|:---|:---|:---|:---|
+| keras | imbalanced | 0.999280 | 0.843373 | 0.714286 | 0.773481 | 0.857029 |
+| keras | undersampling, biggernetwork | 0.959391 | 0.978723 | 0.938776 | 0.958333 | 0.959287 |
+| keras | undersampling | 0.974619 | 1.000000 | 0.948980 | 0.973822 | 0.974490 |
+| keras | imbalanced, threshold 0.5 | 0.999157 | 0.740385 | 0.785714 | 0.762376 | 0.892620 |
