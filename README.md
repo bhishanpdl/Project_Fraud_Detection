@@ -90,10 +90,4 @@ obtained from correct method of PCA and are scaled properly.
 
 | Model | Description | Accuracy | Precision | Recall | F1 | AUC |
 | :---|:---|:---|:---|:---|:---|:---|
-| keras | imbalanced | 0.999280 | 0.843373 | 0.714286 | 0.773481 | 0.857029 |
-| keras | undersampling, biggernetwork | 0.959391 | 0.978723 | 0.938776 | 0.958333 | 0.959287 |
-| keras | undersampling | 0.974619 | 1.000000 | 0.948980 | 0.973822 | 0.974490 |
-| keras | imbalanced, threshold 0.5 | 0.999157 | 0.740385 | 0.785714 | 0.762376 | 0.892620 |
-| keras | imbalanced, threshold 0.5, min-max-scaling | 0.420860 | 0.002872 | 0.969388 | 0.005727 | 0.694651 |
-| keras | imbalanced, threshold 0.5, no-scaling | 0.998139|	0.476190|	0.816327|	0.601504	|0.907389
- |
+|keras|class weight, bigger network|	0.983744	|0.081818	|0.826531	|0.148897	|0.905273|
