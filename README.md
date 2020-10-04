@@ -91,3 +91,10 @@ obtained from correct method of PCA and are scaled properly.
 | Model | Description | Accuracy | Precision | Recall | F1 | AUC |
 | :---|:---|:---|:---|:---|:---|:---|
 |keras|class weight, bigger network|	0.983744	|0.081818	|0.826531	|0.148897	|0.905273|
+
+
+# References
+- https://www.tensorflow.org/tutorials/structured_data/imbalanced_data
+- https://keras.io/examples/structured_data/imbalanced_classification/
+- https://www.kaggle.com/residentmario/using-keras-models-with-scikit-learn-pipelines#
+- https://machinelearningmastery.com/grid-search-hyperparameters-deep-learning-models-python-keras/
