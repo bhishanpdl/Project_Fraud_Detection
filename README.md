@@ -19,9 +19,11 @@ obtained from correct method of PCA and are scaled properly.
 
 <h1 style="background-color:tomato;">Best Model So Far</h1>
 
-| Model | Description | Accuracy | Precision | Recall | F1 | AUC |
-| :---|:---|:---|:---|:---|:---|:---|
-| catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
+| Model | Description | Accuracy | Precision | Recall | F1 | AUC | Untrue Frauds| Missed Frauds|
+| :---|:---|:---|:---|:---|:---|:---|:---|:---|
+|keras|	1 layer, class_weight, early_stopping, scikit api|	0.987939|	0.111989|	0.867347|	0.198366|	0.927747| 674 | 13|
+| cb_tuned pycaret | fold=5 | 0.9996 | 0.9659 | 0.7865 | 0.9667 | 0.8642 | | |
+|catboost |	seed=100,depth=6,iter=1k|	0.999631|	1.000000|	0.785714|	0.880000|	0.892857|0 | 21|
 
 </br>
 
@@ -61,8 +63,8 @@ obtained from correct method of PCA and are scaled properly.
 | Xgboost | undersample, hpo1 | 0.999298 | 0.881579 | 0.683673 | 0.770115 | 0.841758 |
 | Xgboost | imbalanced, hpo | 0.999245 | 0.898551 | 0.632653 | 0.742515 | 0.816265 |
 | xgboost | grid search optuna | 0.999333 | 0.875000 | 0.714286 | 0.786517 | 0.857055 |
-| catboost | default,seed=100 | 0.999403 | 0.999403 | 0.999403 | 0.999403 | 0.857090 |
-| catboost | gridsearch optuna | 0.999368 | 0.930556 | 0.683673 | 0.788235 | 0.841793 |
+|catboost |	seed=100,depth=6,iter=1k|	0.999631|	1.000000|	0.785714|	0.880000|	0.892857|
+
 
 </br>
 
