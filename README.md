@@ -88,9 +88,12 @@ obtained from correct method of PCA and are scaled properly.
 
 <h1 style="background-color:tomato;">Deep Learning Models</h1>
 
-| Model | Description | Accuracy | Precision | Recall | F1 | AUC |
-| :---|:---|:---|:---|:---|:---|:---|
-|keras|class weight, bigger network|	0.983744	|0.081818	|0.826531	|0.148897	|0.905273|
+| Model | Description | Accuracy | Precision | Recall | F1 | AUC | Missed Frauds| Untrue Frauds|
+| :---|:---|:---|:---|:---|:---|:---|:---|:---|
+|keras|	3 layers, 2 dropouts, class_weight| 0.983744|	0.081818|	0.826531|	0.148897|	0.905273| 17 | 909|
+|keras|	1 layer, dropout, early_stopping|	0.984990|	0.090811|	0.857143|	0.164223|	0.921177| 14| 841|
+|keras|	1 layer, dropout, steps_per_epoch, oversampling|	0.982796|	0.080000|	0.857143|	0.146341|	0.920077|14 | 966 |
+|keras|	1 layer, class_weight, early_stopping, scikit api|	0.987939|	0.111989|	0.867347|	0.198366|	0.927747| 13 | 674|
 
 
 # References
