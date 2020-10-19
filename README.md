@@ -12,6 +12,8 @@ obtained from correct method of PCA and are scaled properly.
 **Metric Used**
 - Here 1 means fraud and 0 means no fraud.
 - The metric used is `Recall = TP / (TP + FN)` since we are interested in fraud case, not the overall accuracy of the model.
+- Note that for imbalanced data, the use of ROC curve (ie. ROC AUC or x=FPR Y=TPR) is not useful, instead we use Precision-Recall Curve
+  Which will show the harmonic mean of F-Score (1/F1 = 2/(Precision^-1 + Recall^-1) and that is more useful.
 
 **Resampling Techniques**
 - Under-sampling. (We have low number of frauds, choose randomly same number of non-frauds.)
