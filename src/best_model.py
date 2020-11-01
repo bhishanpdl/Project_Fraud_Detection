@@ -7,7 +7,6 @@ import pandas as pd
 # local imports
 import config
 import util
-import functools
 
 # random state
 import os
@@ -23,6 +22,7 @@ np.random.seed(SEED)
 random.seed(SEED)
 
 # machine learning
+import functools
 import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -115,6 +115,8 @@ history = clf.fit(Xtrain, ytrain,
                 validation_split=PARAMS_FIT['validation_split'],
                 callbacks=callbacks
                 )
+# save fitted model
+clf.model.save(config.path_best_model)
 
 #======================= model evaluation
 ypreds = clf.predict(Xtest).flatten()

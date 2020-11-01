@@ -38,3 +38,7 @@ PARAMS_FIT = {
     'validation_split': 0.2,
     'shuffle': True,
     }
+
+# persited models
+path_best_model = '../models/best_model.h5'
+
