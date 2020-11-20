@@ -82,6 +82,18 @@ def st_load_data(data_path, nrows=None,compression=compression):
 
     return (df_Xtrain,df_Xtest,ser_ytrain,ser_ytest)
 
+def html_with_image():
+    st_header("Data Description")
+
+    st.text("The dataset is highly imbalanced, the class balance is shown below")
+    st.image("deploy/assets/class_balance.png")
+    st.text("The correlations of features with target is shown below:")
+    st.image("deploy/assets/correlation_with_class.png")
+    st.text("The mean of features V1 to V28 is shown below:")
+    st.image("deploy/assets/mean.png")
+    st.text("The feature distribution and outliers are shown below:")
+    st.image("deploy/assets/outliers.png")
+
 def home():
     """Main function """
 
@@ -92,7 +104,8 @@ def home():
     # Author
     html = """<marquee style='width: 30%; color: blue;'><b> Author: Bhishan Poudel</b></marquee>"""
     st.markdown(html, unsafe_allow_html=True)
-    st_display_html(path_about_html,width=600,height=600)
+    st_display_html(path_about_html,width=600,height=800)
+    html_with_image()
 
     #=================== load the data
     st_header("Upload or Use Default Data")
@@ -179,7 +192,6 @@ def model_evaluation_shap(model,df_Xtest):
     expected_values = expected_values[1]
 
     assert shap_values.shape == df_Xtest.shape
-    assert expected_values.shape == df_Xtest.shape
 
     ## force plot
     st.subheader("Force plot for first row of test data.")
@@ -247,4 +259,5 @@ if __name__ == "__main__":
         model_evaluation_shap(model,df_Xtest)
 
     elif choice == "About":
-            st_display_html('about.html',width=600,height=800)
+            st_display_html(path_about_html ,width=600,height=800)
+            html_with_image()
