@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="color:tomato"> Project Description </h1>
+In this project, I took the data from kaggle competition <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud">Credit Card Fraud Detection</a>.
+The dataset contains the credit card transactions in September 2013 by European cardholders. The dataset presents transactions that occurred in only 2 days. The dataset is highly imbalanced and only 0.172% cases are frauds. The dataset already comes with PCA transformation with features V1 upto V28. The only features which have not been transformed with PCA are "Time" and "Amount".
+The target feature is "Class" which is binary and is 1 if fraud and 0 is not fraud.
+
+</br><pre><code class="language-bash">
+Class  # Target 1 for fraud and 0 for not-fraud
+Time   # Time since first transaction
+Amount # Amount of transaction
+
+PCA Variables: V1 to V28
+</code></pre></br>
+
+For the imbalanced dataset accuracy is not a good metric of model evaluation. For the fraud detection case, the appropriate metric is Recall. We can also use AUPRC (Area Under the Precision-Recall Curve). Where the Recall is given by Recall = TP (TP/FN), where TP is true-positive and FP is false negative. In this data 0 is non-fraud and 1 is fraud. True positive is the fraud classified as fraud and False Negative is actual fraud classified as non-fraud.
+
+Here, in this project I have tried various machine learning and deep learning methods. Out of these methods, catboost gave me the best Recall for machine learning algorithms and custom keras articture gave me the best Recall for deep learning algorithms. Among all methods, keras was the best, so, in this app I have used the keras model. For more details about the project <a href="https://bhishanpdl.github.io/Projects/index_projects.html">visit the project Fraud Detection in my website</a>.
+
+</body></html>
