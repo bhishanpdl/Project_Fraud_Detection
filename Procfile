@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run deploy/app_streamlit.py
+web: sh setup.sh && pip3 uninstall scipy && streamlit run deploy/app_streamlit.py

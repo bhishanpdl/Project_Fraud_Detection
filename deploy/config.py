@@ -5,12 +5,10 @@ target = 'Class'
 
 # data
 dat_dir = os.path.join('.','data')
-data_path_raw = os.path.join(dat_dir, 'raw/creditcard.csv.zip')
-compression = 'zip'
+url = "https://github.com/bhishanpdl/Datasets/blob/master/Projects/Fraud_detection/processed/processed_Xtest.csv?raw=true"
 
-path_data_processed_Xtrain = os.path.join(dat_dir,'processed/processed_Xtrain.csv')
-path_data_processed_Xtest = os.path.join(dat_dir,'processed/processed_Xtest.csv')
-path_data_ytrain = os.path.join(dat_dir,'processed/ytrain.csv')
+path_data_processed_Xtest = os.path.join(url)
+
 path_data_ytest = os.path.join(dat_dir,'processed/ytest.csv')
 path_best_model = os.path.join('.','models','best_model.h5')
 

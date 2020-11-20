@@ -41,11 +41,7 @@ streamlit run app_streamlit.py
 
 # Parameters
 target = config.target
-data_path_raw = config.data_path_raw
-compression = config.compression
-path_data_processed_Xtrain = config.path_data_processed_Xtrain
 path_data_processed_Xtest = config.path_data_processed_Xtest
-path_data_ytrain = config.path_data_ytrain
 path_data_ytest = config.path_data_ytest
 path_best_model = config.path_best_model
 

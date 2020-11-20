@@ -1,4 +1,0 @@
-Heroku needs following files:
-- setup.sh
-- Procfile
-- runtime.txt
