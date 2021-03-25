@@ -3,19 +3,22 @@ In this project I used the [Kaggle Creditcard Fraud](https://www.kaggle.com/mlg-
 data to determine whether the transaction is fraud or not.
 
 
-**Assumptions**:
+**Assumptions**:  
 - Here we have data for just two days, but we assume the data is representative
  of the whole population of credit card transactions.
 - We assume the 28 variables V1-V28 are
 obtained from correct method of PCA and are scaled properly.
 
-**Metric Used**
+**Metric Used**  
 - Here 1 means fraud and 0 means no fraud.
-- The metric used is `Recall = TP / (TP + FN)` since we are interested in fraud case, not the overall accuracy of the model.
-- Note that for imbalanced data, the use of ROC curve (ie. ROC AUC or x=FPR Y=TPR) is not useful, instead we use Precision-Recall Curve
-  Which will show the harmonic mean of F-Score (1/F1 = 2/(Precision^-1 + Recall^-1) and that is more useful.
+- For this imbalanced dataset, false negative (fraud classified as not fraud) is more important than false negative, so we use `Recall` as the metric of evaluation. (`Recall = TP / (TP + FN)`).
+- For the imbalanced dataset, AUCROC gives overly optimistic metric, instead we should use `precision_recall_curve` and after looking at the curve we should choose the value that we want for precision and recall.
+- We should also note that precision and recall does not involve TN, so we should use them only when specificity (TNR = TN/(TN+FP)) is not important.
+- For imbalanced dataset, we can use F_beta metric. If both precision and recall are equally important, we can use F1-score. If we consider recall beta times more important than precision, we can use `F_beta = (1+beta^2) PR/(beta^P + R)` where P is precision and R is recall. (Mnemonic: Look at the denominator and remember that Recall is beta^2 time important than Precision). (Common values are 2 and 0.5. If beta is 2, recall is twice important than precision.)
+- We should also note that F_beta depends on Precision and Recall only. It does not depend on TN (true negative), so for imbalanced classification, better metric could be MCC (Mathew's Correlation Coefficient.)
 
-**Resampling Techniques**
+**Resampling Techniques**  
+- Our dataset is imbalanced, we can try two sampling: undersampling and oversampling.
 - Under-sampling. (We have low number of frauds, choose randomly same number of non-frauds.)
 - Oversampling `SMOTE` method. Used external library `imblearn`.
 
