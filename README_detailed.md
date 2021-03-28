@@ -21,19 +21,19 @@ Table of Contents
 
 # Author's Comments on Imbalanced Dataset
 In this project I have dealt with various usual machine learning classifiers such as `Logistic Regression`,
-`Support Vector Classifier`, `Decision Tree Classifier`, `Random Forest Classifier`, `K-Nearest Neighbours Classifier` with
+`Support Vector Classifier`, `Decision Tree Classifier`, `Random Forest Classifier`, `K-Nearest Neighbors Classifier` with
 and without resampling methods (upsampling SMOTE and downsampling) and with and without grid search (Grid Search
-and Randomized Search). All these methods works only when we have label column which tells whether the transaction is fraud or not.
+and Randomized Search). All these resampling methods works only when we have label column which tells whether the transaction is fraud or not.
 But in real life we have label column only for training data and we do not have label for the test set. Here we should note that
-the test set is highly imbalanced, there are only very few fraud cases and rest of them are non-fraud. We dont know which
+the test set is highly imbalanced, there are only very few fraud cases and rest of them are non-fraud. We don't know which
 transactionsa are fraud or not and thus can not downsample or upsample. When I did all the classification modelling on 
 imbalanced training and test on imbalanced test set, I got zero recall (basically model predicts everything as non-fraud). If I 
-do modelling on resampled data and test on imbalanced it will also not work because we are simply violating the first principle 
+do modelling on resampled data and test on imbalanced it will also not work because we are simply violating the assumption 
 of machine learning: Training and Test data must come from same distribution.
 
 To deal with imbalanced dataset, we can not use usual machine learning techniques. However, there are some specialized machine
-learning techniques we can use for imbalanced dataset. In this project I have used two of these algorightms called `Local Outliers Factor (LOF)` and `Isolation Forest`. These algorithms does not give results as good as resampling methods but they have advantage
-that we can test these algorigthms on imbalanced dataset. Out of 98 frauds in my test set, using `LOF` gave me 3 correct frauds and `Isolation Forest` gave me 25 correct frauds. In comparison, all of the usual machine learning methods gave me 0 correct frauds out of 98 frauds in imbalanced dataset.
+learning techniques we can use for imbalanced dataset. In this project I have used two of these algorithms called `Local Outliers Factor (LOF)` and `Isolation Forest`. These algorithms does not give results as good as resampling methods but they have advantage
+that we can test these algorithms on imbalanced dataset. Out of 98 frauds in my test set, using `LOF` gave me 3 correct frauds and `Isolation Forest` gave me 25 correct frauds. In comparison, all of the usual machine learning methods gave me 0 correct frauds out of 98 frauds in imbalanced dataset.
 
 **Update** After doing usual machine learning algorithms, I again did a follow up with gradient boosting methods. Scikiit learn has a simple boosting algorithm `GradientBoostingClassifier` and there are other specialized libraries just to do the boosting algorithms. Out of those libraries I used `xgboost`, `lightgbm`, and `catboost` classifiers.
 
@@ -67,7 +67,7 @@ account for 0.172% of all transactions.
 
 Features V1, V2, ... V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'.
 
-Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-senstive learning.
+Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-sensitive learning.
 
 Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
 
@@ -77,11 +77,11 @@ Feature 'Class' is the response variable and it takes value 1 in case of fraud a
 obtained from correct method of PCA and scaled properly.
 
 # Business Problem
-When we purchase something using credit card we do not want anybody else illegally buy stuffs from our account by fraud and want to detect the fradulent activities.
+When we purchase something using credit card we do not want anybody else illegally buy stuffs from our account by fraud and want to detect the fraudulent activities.
 
 From the given features (V1-V28, Amount, Time) we will build a model that will detect whether the transaction is fraudulent or not.
 
-Here, Class is 1 means, fraud case and 0 means non-fraud case. Out of 1000 transactions, only 2 cases are fraud and other 998 cases are non-fraud. This means the dataset is hightly imbalanced.
+Here, Class is 1 means, fraud case and 0 means non-fraud case. Out of 1000 transactions, only 2 cases are fraud and other 998 cases are non-fraud. This means the dataset is highly imbalanced.
 
 For the imbalanced dataset, we can not use the usual accuracy metric to assess the performance of the model. If we simply build a model to predict all the transactions as non-fraud we will get 99.8% accuracy, which looks extremely good but its totally useless here since it failed to detect a single fraud case.
 
@@ -144,8 +144,8 @@ recall = tp / (tp+fn)
               Predicted  |
 Correct 0     0(TN)   1(FP)
         1     0(FN)   1(TP) ---> recall = TP / (TP + FN)   Recall has one Negative
-                                 Out of all 10 last true aniversaries, how many did I recall correctly?
-                                 
+                                 Out of all 10 last true anniversaries, how many did I recall correctly?
+
 0 is non-fraud, non-spam
 1 is fraud    , spam
 
@@ -160,12 +160,12 @@ Here I am interested in the quantity False Negative, I want to make it as small 
 # Get to know with the data (EDA)
 
 ## Class Balance
-As we read in the description our dataset is heavily imbalanced. There are about 2 fruads in 1000 transactions.
+As we read in the description our dataset is heavily imbalanced. There are about 2 frauds in 1000 transactions.
 ![](reports/figures/class_balance_donut_plot.png)
 
 If we run classification models (e.g. Logistic regression, Random Forest Regressor) they will wrongly classify all the cases as non-frauds and get accuracy of 99% but will fail to classify correctly any of the fraud cases.
 
-We have two choices here, either undersample the data or over-sample the data. Most common method is undersampling. It makes the model run fast but at the cost of losing lots of lots of data points. Here in this project, if we undersmap the data, we will get 492 fraud cases. If we just take random sample of another 492 non-frauds our data will have roughly 1000 samples. Note that previously we had 285,000 samples.
+We have two choices here, either undersample the data or over-sample the data. Most common method is undersampling. It makes the model run fast but at the cost of losing lots of lots of data points. Here in this project, if we undersample the data, we will get 492 fraud cases. If we just take random sample of another 492 non-frauds our data will have roughly 1000 samples. Note that previously we had 285,000 samples.
 
 Another way of dealing with imbalanced dataset is oversampling. One of the popular over-sampling method is called SMOTE (Synthetically Modified Oversampling Technique).
 
@@ -190,7 +190,7 @@ For the Class 1 (Fraud case), we can see that feature V11 has median about +4, w
 ![](reports/figures/positive_correlations_with_target.png)
 
 
-Sometimes we see collinearity between two features. If two features are collinear, they have high correlation corefficient between. If one feature increases another feature also increases and model will have difficulty which feature feature causes the changes in Target variable. If any two features are highly correlated (eg. r > 0.9) one the feature may be dropped from the dataset. Then there is a question which feature to keep and which feature to drop. We look at the correlation both features with the Target and keep the feature having larger correlation.
+Sometimes we see collinearity between two features. If two features are collinear, they have high correlation coefficient between. If one feature increases another feature also increases and model will have difficulty which feature feature causes the changes in Target variable. If any two features are highly correlated (eg. r > 0.9) one the feature may be dropped from the dataset. Then there is a question which feature to keep and which feature to drop. We look at the correlation both features with the Target and keep the feature having larger correlation.
 The correlation plot among the PCA transformed variables V1-V28 is given below. This shows there is not much collinearity among the features.
 ![](reports/figures/correlation_matrix_balanced.png)
 
@@ -215,14 +215,14 @@ We see that most of transactions are below $100 for both fraud and non-fraud tra
 ![](reports/figures/cat_amount_countplot_non_fraud.png)
 
 ## Distribution Plots of Features
-Our data set does not have too many features, it has 28 PCA transformed features and two usual features. We can look at the distribution plot of each features for the class distribution of fraud and non-fraud and if the distruption of these two classes are same we may want to drop this feature from the entire dataset.
+Our data set does not have too many features, it has 28 PCA transformed features and two usual features. We can look at the distribution plot of each features for the class distribution of fraud and non-fraud and if the distribution of these two classes are same we may want to drop this feature from the entire dataset.
 ![](reports/figures/distplots/distplot_V28_selected_xlim.png)
 ![](reports/figures/distplots/distplot_V27_selected_xlim.png)
 For example, for the features V28 and V27, the class distribution are more or less same for fraud and non-fraud classes and we may drop these features.
 But, when I looked at correlation of these features with Target, they have considerable correlation and I am planning to keep them for the analysis.
 
 # Statistics
-In statistics we sometimes are interested in the momentes of the variables. First four degrees of moments of a random variable has names: `mean`, `variance`, `skewness`, `kurtosis` and other moments are simply called moment of order n.
+In statistics we sometimes are interested in the moments of the variables. First four degrees of moments of a random variable has names: `mean`, `variance`, `skewness`, `kurtosis` and other moments are simply called moment of order n.
 ![](images/moments.png)
 
 
@@ -242,7 +242,7 @@ If the skewness is less than 0, it is negatively skewed and has tail on left sid
 If we have skewed features, then they do not follow the Gaussian distribution,and underlying assumptions of linear regression is violated. To reduce the skewness we can do log transformation (or sqrt transformation or boxcox transformation and other transformations). Here, the features are already from PCA transformation, so I am keeping them as it is.
 
 
-Kurtosis is related to the fourth moment. For Normal distribution, kurtosis has a value of 3. If kurtosis > 3 it is called lepto-kurtic and it is tall peaked and on the orther hand if kurtosis is less than 3, it is called platy-kurtic and looks flat. Normal distribution has other name meso-kurtic.
+Kurtosis is related to the fourth moment. For Normal distribution, kurtosis has a value of 3. If kurtosis > 3 it is called lepto-kurtic and it is tall peaked and on the other hand if kurtosis is less than 3, it is called platy-kurtic and looks flat. Normal distribution has other name meso-kurtic.
 
 
 In our dataset some of the features have high kurtosis values. This indicates that there might be some outliers in these features. For example feature V28 has very high kurtosis value and it also has high skewness value. It might have some outliers.
