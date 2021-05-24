@@ -11,7 +11,7 @@ obtained from correct method of PCA and are scaled properly.
 
 **Metric Used**  
 - Here 1 means fraud and 0 means no fraud.
-- For this imbalanced dataset, false negative (fraud classified as not fraud) is more important than false negative, so we use `Recall` as the metric of evaluation. (`Recall = TP / (TP + FN)`).
+- For this imbalanced dataset, false negative (fraud classified as not fraud) is more important than false positive (not-fraud classified as fraud), so we use `Recall` as the metric of evaluation. (`Recall = TP / (TP + FN)`).
 - For the imbalanced dataset, AUCROC gives overly optimistic metric, instead we should use `precision_recall_curve` and after looking at the curve we should choose the value that we want for precision and recall.
 - We should also note that precision and recall does not involve TN, so we should use them only when specificity (TNR = TN/(TN+FP)) is not important.
 - For imbalanced dataset, we can use F_beta metric. If both precision and recall are equally important, we can use F1-score. If we consider recall beta times more important than precision, we can use `F_beta = (1+beta^2) PR/(beta^P + R)` where P is precision and R is recall. (Mnemonic: Look at the denominator and remember that Recall is beta^2 time important than Precision). (Common values are 2 and 0.5. If beta is 2, recall is twice important than precision.)
