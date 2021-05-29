@@ -14852,7 +14852,7 @@ scikit learn<br>
 <span class="n">clf_iso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
 
 <span class="c1"># prediction</span>
-<span class="n">scores_prediction</span> <span class="o">=</span> <span class="n">clf_iso</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+<span class="n">yprobs</span> <span class="o">=</span> <span class="n">clf_iso</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span> <span class="c1"># this is 1d array</span>
 <span class="n">ypreds</span> <span class="o">=</span> <span class="n">clf_iso</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
 
 <span class="c1"># algorithm gives 1 and -1 classes, make them 0 and 1</span>
