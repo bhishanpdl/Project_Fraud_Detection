@@ -14673,29 +14673,16 @@ Non-Fraud ==> Fraud FP
 </div>
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Useful-Scripts">Useful Scripts<a class="anchor-link" href="#Useful-Scripts">&#182;</a></h1>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_method_attributes</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Show all the attributes of a given method.</span>
-<span class="sd">    Example:</span>
-<span class="sd">    ========</span>
-<span class="sd">    show_method_attributes(list)</span>
-<span class="sd">     &quot;&quot;&quot;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">method</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;_&#39;</span> <span class="p">]</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span> 
-         <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;os np pd sys time psycopg2&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">]</span>
-             
-
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ncols</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my local library</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/poudel/Dropbox/a00_Bhishan_Modules/bhishan/&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">bhishan</span> <span class="kn">import</span> <span class="n">bp</span>
 </pre></div>
 
      </div>
@@ -16749,15 +16736,15 @@ Non-Fraud ==> Fraud FP
 <span class="n">cvpred_svc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_svc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
                              <span class="n">method</span><span class="o">=</span><span class="s2">&quot;decision_function&quot;</span><span class="p">)</span>
 
-<span class="c1"># default cross val predict method is &#39;predict&#39;</span>
-<span class="n">cvpred_knn</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_knn</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">cvpred_dtc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_dtc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">cvpred_rfc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_rfc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># default cross val predict method is &#39;predict_proba&#39; to get probs</span>
+<span class="n">cvprob_knn</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_knn</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
+<span class="n">cvprob_dtc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_dtc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
+<span class="n">cvprob_rfc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_rfc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
 
-<span class="n">all_cross_val_preds</span> <span class="o">=</span> <span class="p">[</span><span class="n">cvpred_lr</span><span class="p">,</span> <span class="n">cvpred_svc</span><span class="p">,</span> <span class="n">cvpred_knn</span><span class="p">,</span> <span class="n">cvpred_dtc</span><span class="p">,</span> <span class="n">cvpred_rfc</span><span class="p">]</span>
+<span class="n">all_cross_val_probs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cvprob_lr</span><span class="p">,</span> <span class="n">cvprob_svc</span><span class="p">,</span> <span class="n">cvprob_knn</span><span class="p">,</span> <span class="n">cvprob_dtc</span><span class="p">,</span> <span class="n">cvprob_rfc</span><span class="p">]</span>
 
-<span class="n">all_roc_auc_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cvpred</span><span class="p">)</span>
-                        <span class="k">for</span> <span class="n">cvpred</span> <span class="ow">in</span> <span class="n">all_cross_val_preds</span> <span class="p">]</span>
+<span class="n">all_roc_auc_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cvprob</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">cvprob</span> <span class="ow">in</span> <span class="n">all_cross_val_probs</span> <span class="p">]</span>
 
 <span class="c1"># create dataframe of results</span>
 <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;Cross Validation AUROC Scores&#39;</span>
@@ -16841,6 +16828,20 @@ Non-Fraud ==> Fraud FP
 
 </div>
 
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cvpred_lr</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
@@ -18710,34 +18711,16 @@ if (outputEl) {{
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">clf_names</span><span class="p">,</span> <span class="n">all_roc_auc_scores</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">ofile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">clf_names</span><span class="p">,</span> <span class="n">all_roc_auc_scores</span><span class="p">,</span> <span class="n">all_cross_val_probs</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">ofile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plot Receiver Operating Characteristic (ROC) curve.</span>
-<span class="sd">    </span>
+
 <span class="sd">    NOTE:</span>
 <span class="sd">    In cross-validation we do not need Xtrain and Xtest,</span>
 <span class="sd">    one split of X is taken as Xtest and remaining splits are taken as Xtrain.</span>
 <span class="sd">    </span>
 <span class="sd">    Example:</span>
 <span class="sd">    ---------</span>
-<span class="sd">    clf_names = [&quot;Logisitic Regression&quot;,&quot;Support Vector Classifier&quot;,</span>
-<span class="sd">                 &quot;KNN&quot;, &quot;Decision Tree Classifier&quot;,&quot;Random Forest Classifier&quot;]</span>
 
-<span class="sd">    cvpred_lr = cross_val_predict(clf_best_lr, X, y, cv=5,</span>
-<span class="sd">                             method=&quot;decision_function&quot;)</span>
-<span class="sd">    cvpred_svc = cross_val_predict(clf_best_svc, X, y, cv=5,</span>
-<span class="sd">                                 method=&quot;decision_function&quot;)</span>
-
-<span class="sd">    cvpred_knn = cross_val_predict(clf_best_knn,X,y,cv=5)</span>
-<span class="sd">    cvpred_dtc = cross_val_predict(clf_best_dtc,X,y,cv=5)</span>
-<span class="sd">    cvpred_rfc = cross_val_predict(clf_best_rfc, X, y, cv=5)</span>
-
-<span class="sd">    all_cross_val_preds = [cvpred_lr, cvpred_svc,</span>
-<span class="sd">                             cvpred_knn, cvpred_dtc, cvpred_rfc]</span>
-
-<span class="sd">    all_roc_auc_scores = [roc_auc_score(y, cvpred)</span>
-<span class="sd">                        for cvpred in all_cross_val_preds ]</span>
-
-<span class="sd">    plot_roc_curve(clf_names, all_roc_auc_scores,y)</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_predict</span>
@@ -18748,7 +18731,7 @@ if (outputEl) {{
               <span class="k">for</span> <span class="n">clf</span><span class="p">,</span><span class="n">pred</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">clf_names</span><span class="p">,</span><span class="n">all_roc_auc_scores</span><span class="p">)]</span>
 
     <span class="n">fpr_tpr_threshold</span> <span class="o">=</span> <span class="p">[</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pred_x</span><span class="p">)</span>
-                         <span class="k">for</span> <span class="n">pred_x</span> <span class="ow">in</span> <span class="n">all_cross_val_preds</span> <span class="p">]</span>
+                         <span class="k">for</span> <span class="n">pred_x</span> <span class="ow">in</span> <span class="n">all_cross_val_probs</span> <span class="p">]</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpr_tpr_threshold</span><span class="p">)):</span>
@@ -18793,20 +18776,20 @@ if (outputEl) {{
 <span class="n">clf_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Logisitic Regression&quot;</span><span class="p">,</span><span class="s2">&quot;Support Vector Classifier&quot;</span><span class="p">,</span>
              <span class="s2">&quot;KNN&quot;</span><span class="p">,</span> <span class="s2">&quot;Decision Tree Classifier&quot;</span><span class="p">,</span><span class="s2">&quot;Random Forest Classifier&quot;</span><span class="p">]</span>
 
-<span class="n">cvpred_lr</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_lr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="n">cvprob_lr</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_lr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
                          <span class="n">method</span><span class="o">=</span><span class="s2">&quot;decision_function&quot;</span><span class="p">)</span>
-<span class="n">cvpred_svc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_svc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="n">cvprob_svc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_svc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
                              <span class="n">method</span><span class="o">=</span><span class="s2">&quot;decision_function&quot;</span><span class="p">)</span>
 
-<span class="n">cvpred_knn</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_knn</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">cvpred_dtc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_dtc</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">cvpred_rfc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_rfc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cvprob_knn</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_knn</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
+<span class="n">cvprob_dtc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_dtc</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
+<span class="n">cvprob_rfc</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">clf_best_rfc</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;predict_proba&#39;</span><span class="p">)</span>
 
-<span class="n">all_cross_val_preds</span> <span class="o">=</span> <span class="p">[</span><span class="n">cvpred_lr</span><span class="p">,</span> <span class="n">cvpred_svc</span><span class="p">,</span>
-                         <span class="n">cvpred_knn</span><span class="p">,</span> <span class="n">cvpred_dtc</span><span class="p">,</span> <span class="n">cvpred_rfc</span><span class="p">]</span>
+<span class="n">all_cross_val_probs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cvprob_lr</span><span class="p">,</span> <span class="n">cvprob_svc</span><span class="p">,</span>
+                         <span class="n">cvprob_knn</span><span class="p">,</span> <span class="n">cvprob_dtc</span><span class="p">,</span> <span class="n">cvprob_rfc</span><span class="p">]</span>
 
-<span class="n">all_roc_auc_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cvpred</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">cvpred</span> <span class="ow">in</span> <span class="n">all_cross_val_preds</span> <span class="p">]</span>
+<span class="n">all_roc_auc_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cvprob</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">cvprob</span> <span class="ow">in</span> <span class="n">all_cross_val_probs</span> <span class="p">]</span>
 
 <span class="n">ofile</span> <span class="o">=</span> <span class="s1">&#39;../reports/figures/roc_curves_for_all_clf.png&#39;</span>
 <span class="n">plot_roc_curve</span><span class="p">(</span><span class="n">clf_names</span><span class="p">,</span> <span class="n">all_roc_auc_scores</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ofile</span><span class="o">=</span><span class="n">ofile</span><span class="p">)</span>
@@ -18907,16 +18890,15 @@ if (outputEl) {{
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bhishan.util_plot_model_eval</span> <span class="kn">import</span> <span class="n">plotly_binary_clf_evaluation</span>
-
-<span class="n">yscore_best_lr</span> <span class="o">=</span> <span class="n">clf_best_lr</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">yscore_best_lr</span> <span class="o">=</span> <span class="n">clf_best_lr</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
 
 <span class="n">ofile</span> <span class="o">=</span> <span class="s1">&#39;../reports/html/logistic_regression_model_evaluation.html&#39;</span>
-<span class="n">plotly_binary_clf_evaluation</span><span class="p">(</span><span class="s1">&#39;clf_best_lr&#39;</span><span class="p">,</span><span class="n">clf_best_lr</span><span class="p">,</span><span class="n">ytest</span><span class="p">,</span>
+
+<span class="n">pb</span><span class="o">.</span><span class="n">plotly_binary_clf_evaluation</span><span class="p">(</span><span class="s1">&#39;clf_best_lr&#39;</span><span class="p">,</span><span class="n">clf_best_lr</span><span class="p">,</span><span class="n">ytest</span><span class="p">,</span>
                              <span class="n">ypreds_best_lr</span><span class="p">,</span><span class="n">yscore_best_lr</span><span class="p">,</span>
                              <span class="n">df_under</span><span class="p">,</span><span class="n">ofile</span><span class="o">=</span><span class="n">ofile</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">plotly_binary_clf_evaluation</span><span class="p">(</span><span class="s1">&#39;clf_best_lr&#39;</span><span class="p">,</span><span class="n">clf_best_lr</span><span class="p">,</span><span class="n">ytest</span><span class="p">,</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">plotly_binary_clf_evaluation</span><span class="p">(</span><span class="s1">&#39;clf_best_lr&#39;</span><span class="p">,</span><span class="n">clf_best_lr</span><span class="p">,</span><span class="n">ytest</span><span class="p">,</span>
                              <span class="n">ypreds_best_lr</span><span class="p">,</span><span class="n">yscore_best_lr</span><span class="p">,</span>
                              <span class="n">df_under</span><span class="p">[</span><span class="n">features_with_log</span><span class="p">],</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>

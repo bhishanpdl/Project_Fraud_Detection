@@ -14335,29 +14335,16 @@ a.anchor-link {
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Important-Scripts">Important Scripts<a class="anchor-link" href="#Important-Scripts">&#182;</a></h1>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_text_barplot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">percent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">comma</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="s1">&#39;patches&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
-        <span class="n">txt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span> 
-        <span class="n">txt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">(),</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span>
-        <span class="n">txt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:,.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span> <span class="k">if</span> <span class="n">comma</span> <span class="k">else</span> <span class="n">txt</span>
-        <span class="k">if</span> <span class="n">percent</span><span class="p">:</span>
-            <span class="n">txt</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span><span class="o">+</span><span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mf">2.</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
-                <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="n">rot</span><span class="p">,</span><span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my local library</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/poudel/Dropbox/a00_Bhishan_Modules/bhishan/&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">bhishan</span> <span class="kn">import</span> <span class="n">bp</span>
 </pre></div>
 
      </div>
@@ -16647,9 +16634,9 @@ dtype: float64</pre>
 
 
 
-<div id="c198d5f7-afcf-4b2c-978a-8856f890d8a6" class="jupyter-widgets jp-OutputArea-output ">
+<div id="50f4a70b-1e24-4e61-8e79-e88b92e667d1" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('c198d5f7-afcf-4b2c-978a-8856f890d8a6');
+var element = document.getElementById('50f4a70b-1e24-4e61-8e79-e88b92e667d1');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "a9b412a674fe46cc8bfd6ad866e2be32", "version_major": 2, "version_minor": 0}
